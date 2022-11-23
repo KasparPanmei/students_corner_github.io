@@ -1,0 +1,360 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    transition: all .5s ease-in 0.5s;
+    scroll-behavior: smooth;
+}
+::selection
+{
+    background-color: rebeccapurple;
+}
+/* scroll-bar */
+/* ::-webkit-scrollbar
+{
+    width: 5px;
+}
+::-webkit-scrollbar-track
+{
+    background-color: #333;
+    border-radius: 1px;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: crimson;
+    border-radius: 50px;
+} */
+/* end of scrollbar */
+/* .container-fluid
+{
+    position: fixed;
+    top: 0%;
+    z-index: 5;
+    background-color: rgb(33, 37, 41);
+} */
+.navbar-nav a
+{
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 15px;
+}
+.navbar-nav a:hover
+{
+    color: crimson;
+    border-top: 2px dotted crimson;
+    transition: all .5s ease-in;
+    transform: scale(1.1);
+}
+.navbar-toggler-icon
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+/* table-form */
+section
+{
+    background-color:rgb(148, 194, 240);
+    height: 86vh;
+}
+table
+{
+    box-shadow: 0px 0px 50px black;
+}
+.table-form
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+section h5
+{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    opacity: 0.8;
+    padding: 30px;
+}
+.table-form .photo img
+{
+    width: 600px;
+    height: 450px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 100px black;
+    cursor: pointer;
+}
+.table-form .photo img:hover
+{
+    transform: scale(0.9);
+}
+.table-format
+{
+    width: 600px;
+    height: 450px;
+    border: 1px solid;
+}
+.table-format thead tr th
+{
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0px 0px 10px;
+    background-color: rgb(204, 106, 106);
+}
+.table-format tbody 
+{
+    text-align: center;
+}
+.table-format tbody tr
+{
+    border: 1px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.788);
+}
+.table-format tbody tr a
+{
+    text-decoration: none;
+    color: white;
+}
+.table-format tbody tr a:hover
+{
+    border-bottom: 1px dotted;
+    transition: 0.2s all ease;
+}
+/* login-btn */
+.login-btn
+{
+    text-align: center;
+    margin: 5rem auto;
+}
+.login-btn .btn
+{
+    box-sizing: border-box;
+    box-shadow: 0 0 2rem grey;
+}
+.login-btn .btn a
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.login-btn .btn:hover
+{
+    transform: scale(1.1);
+    transition:  400ms;
+}
+@media (max-width:1864.98px)
+{
+    .table-format
+    {
+        width: 500px;
+        height: 350px;
+        border: 1px solid;
+        padding: 10px;
+    }
+    .table-format thead tr td
+    {
+        font-size: 10px;
+    }
+    .table-form .photo img
+    {
+        width: 500px;
+        height: 350px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:999.98px)
+{
+    section
+    {
+        background-color:rgb(148, 194, 240);
+        height: 90vh;
+    }
+    .table-format
+    {
+        width: 400px;
+        height: 350px;
+        border: 1px solid;
+    }
+    .table-format tbody tr td
+    {
+        font-size: 10px
+    }
+    .table-form .photo img
+    {
+        width: 400px;
+        height: 350px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:799.98px)
+{
+    section
+    {
+        background-color:rgb(148, 194, 240);
+        height: 84.5vh;
+    }
+    .table-format
+    {
+        width: 300px;
+        height: 250px;
+        border: 1px solid;
+    }
+    .table-format tbody tr td
+    {
+        font-size: 10px
+    }
+    .table-form .photo img
+    {
+        width: 300px;
+        height: 250px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:599.98px)
+{
+    .table-form
+    {
+        display: block;
+        text-align: center;
+    }
+    section
+    {
+        background-color:rgb(148, 194, 240);
+        height: 150vh;
+    }
+    .table-format
+    {
+        width: 300px;
+        margin: 20px auto;
+        height: 250px;
+        border: 1px solid;
+        
+    }
+}
+@media (max-width:457.98px)
+{
+    section
+    {
+        background-color:rgb(148, 194, 240);
+        height: 150vh;
+    }
+}
+@media (max-width:303.98px)
+{
+    section
+    {
+        background-color:rgb(148, 194, 240);
+        height: 100vh;
+    }
+    .table-format
+    {
+        width: 50px;
+        height: 150px;
+        border: 1px solid;
+    }
+    .table-format thead tr th
+    {
+        font-size: 10px
+    }
+    .table-format tbody tr td
+    {
+        font-size: 8px;
+        padding: 5px;
+    }
+    .table-form .photo img
+    {
+        width: 200px;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:299.98px)
+{
+    .table-format
+    {
+        width: 50px;
+        height: 150px;
+        border: 1px solid;
+    }
+    .table-format thead tr th
+    {
+        font-size: 10px
+    }
+    .table-format tbody tr td
+    {
+        font-size: 8px;
+        padding: 5px;
+    }
+    .table-form .photo img
+    {
+        width: 200px;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:269.98px)
+{
+    .table-format
+    {
+        width: 50px;
+        height: 150px;
+        border: 1px solid;
+    }
+    .table-format tbody tr td
+    {
+        font-size: 7px;
+        padding: 2px;
+    }
+}
+@media (max-width:211.98px)
+{
+    .table-format
+    {
+        width: 30px;
+        height: 150px;
+        border: 1px solid;
+    }
+    .table-format thead tr th
+    {
+        font-size: 8px
+    }
+    .table-format tbody tr td
+    {
+        font-size: 5px;
+        padding: 2px;
+    }
+    .table-form .photo img
+    {
+        width: 150px;
+        height: 150px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
+@media (max-width:213.98px)
+{
+    .navbar-brand img
+    {
+        width: 150px !important;
+    }
+}
