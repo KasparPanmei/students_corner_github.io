@@ -401,21 +401,21 @@ article .container .heading h4
 .new-cols .footer-cols .phone .icons-number .icons #whats a svg:hover
 {
     transform: rotate(360deg);
-    transition:  2s all ease 0.5s;
+    transition:  1s all ease 0.5s;
     background-color: rgb(104, 203, 117);
     border-radius: 10px;
 }
 .new-cols .footer-cols .phone .icons-number .icons #face a svg:hover
 {
     transform: rotate(360deg);
-    transition:  2s all ease 0.5s;
+    transition:  1s all ease 0.5s;
     background-color: rgb(80, 138, 177);
     border-radius: 10px;
 }
 .new-cols .footer-cols .phone .icons-number .icons #tweet a svg:hover
 {
     transform: rotate(360deg);
-    transition:  2s all ease 0.5s;
+    transition:  1s all ease 0.5s;
     background: rgb(59, 82, 145);
     border-radius: 10px;
 }
@@ -438,10 +438,10 @@ article .container .heading h4
 {
     margin-top: 20px;
 }
-.new-cols .footer-cols iframe:hover
+/* .new-cols .footer-cols iframe:hover
 {
     transform: scale(1.1);
-}
+} */
 .new-cols .footer-cols .btn
 {
     border: 1px solid rgb(97, 137, 212);

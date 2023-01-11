@@ -7,10 +7,10 @@
 }
 ::selection
 {
-    background-color: rebeccapurple;
+    background-color:rgb(97, 137, 212);
 }
 /* scroll-bar */
-/* ::-webkit-scrollbar
+::-webkit-scrollbar
 {
     width: 5px;
 }
@@ -21,9 +21,9 @@
 }
 ::-webkit-scrollbar-thumb
 {
-    background-color: crimson;
+    background-color:rgb(97, 137, 212);
     border-radius: 50px;
-} */
+}
 /* end of scrollbar */
 /* .container-fluid
 {
@@ -41,10 +41,10 @@
 }
 .navbar-nav a:hover
 {
-    color: crimson;
-    border-top: 2px dotted crimson;
+    color: rgb(97, 137, 212);
+    border-top: 2px dotted rgb(97, 137, 212);
     transition: all .5s ease-in;
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 .navbar-toggler-icon
 {
@@ -66,7 +66,7 @@ table
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:center;
     align-items: center;
 }
 section h5
@@ -86,51 +86,12 @@ section h5
     box-shadow: 0px 0px 100px black;
     cursor: pointer;
 }
-.table-form .photo img:hover
-{
-    transform: scale(0.9);
-}
-.table-format
-{
-    width: 600px;
-    height: 450px;
-    border: 1px solid;
-}
-.table-format thead tr th
-{
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    text-shadow: 0px 0px 10px;
-    background-color: rgb(204, 106, 106);
-}
-.table-format tbody 
-{
-    text-align: center;
-}
-.table-format tbody tr
-{
-    border: 1px solid black;
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.788);
-}
-.table-format tbody tr a
-{
-    text-decoration: none;
-    color: white;
-}
-.table-format tbody tr a:hover
-{
-    border-bottom: 1px dotted;
-    transition: 0.2s all ease;
-}
 /* login-btn */
 .login-btn
 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     text-align: center;
     margin: 5rem auto;
 }
@@ -138,10 +99,11 @@ section h5
 {
     box-sizing: border-box;
     box-shadow: 0 0 2rem grey;
+    background-color: aliceblue;
 }
 .login-btn .btn a
 {
-    color: white;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -173,27 +135,28 @@ section h5
         cursor: pointer;
     }
 }
+@media (max-width:1864.98px)
+{
+    .table-form .photo img
+    {
+        width: 500px;
+        height: 350px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 100px black;
+        cursor: pointer;
+    }
+}
 @media (max-width:999.98px)
 {
     section
     {
         background-color:rgb(148, 194, 240);
-        height: 90vh;
-    }
-    .table-format
-    {
-        width: 400px;
-        height: 350px;
-        border: 1px solid;
-    }
-    .table-format tbody tr td
-    {
-        font-size: 10px
+        height: 84.2vh;
     }
     .table-form .photo img
     {
         width: 400px;
-        height: 350px;
+        height: 325px;
         border-radius: 5px;
         box-shadow: 0px 0px 100px black;
         cursor: pointer;
@@ -204,17 +167,7 @@ section h5
     section
     {
         background-color:rgb(148, 194, 240);
-        height: 84.5vh;
-    }
-    .table-format
-    {
-        width: 300px;
-        height: 250px;
-        border: 1px solid;
-    }
-    .table-format tbody tr td
-    {
-        font-size: 10px
+        height: 84.2vh;
     }
     .table-form .photo img
     {
@@ -235,7 +188,7 @@ section h5
     section
     {
         background-color:rgb(148, 194, 240);
-        height: 150vh;
+        height: 100vh;
     }
     .table-format
     {
@@ -251,7 +204,7 @@ section h5
     section
     {
         background-color:rgb(148, 194, 240);
-        height: 150vh;
+        height: 100vh;
     }
 }
 @media (max-width:303.98px)
@@ -260,21 +213,6 @@ section h5
     {
         background-color:rgb(148, 194, 240);
         height: 100vh;
-    }
-    .table-format
-    {
-        width: 50px;
-        height: 150px;
-        border: 1px solid;
-    }
-    .table-format thead tr th
-    {
-        font-size: 10px
-    }
-    .table-format tbody tr td
-    {
-        font-size: 8px;
-        padding: 5px;
     }
     .table-form .photo img
     {
@@ -287,21 +225,6 @@ section h5
 }
 @media (max-width:299.98px)
 {
-    .table-format
-    {
-        width: 50px;
-        height: 150px;
-        border: 1px solid;
-    }
-    .table-format thead tr th
-    {
-        font-size: 10px
-    }
-    .table-format tbody tr td
-    {
-        font-size: 8px;
-        padding: 5px;
-    }
     .table-form .photo img
     {
         width: 200px;
@@ -311,37 +234,8 @@ section h5
         cursor: pointer;
     }
 }
-@media (max-width:269.98px)
-{
-    .table-format
-    {
-        width: 50px;
-        height: 150px;
-        border: 1px solid;
-    }
-    .table-format tbody tr td
-    {
-        font-size: 7px;
-        padding: 2px;
-    }
-}
 @media (max-width:211.98px)
 {
-    .table-format
-    {
-        width: 30px;
-        height: 150px;
-        border: 1px solid;
-    }
-    .table-format thead tr th
-    {
-        font-size: 8px
-    }
-    .table-format tbody tr td
-    {
-        font-size: 5px;
-        padding: 2px;
-    }
     .table-form .photo img
     {
         width: 150px;
