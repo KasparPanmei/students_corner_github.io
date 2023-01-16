@@ -5,13 +5,13 @@ extract($_POST);
 if(isset($submit))
 {
   $sql = "INSERT INTO `student_details`(name, branch, regno, password, email, phone, sentence, links) VALUES ('$name', '$branch', '$regno', '$password', '$email', '$phone', '$sentence', '$links')";
-  if($con->query($sql)==true)
+  if($con->query($sql)==TRUE)
   {
-    echo "<script> alert('Registered Successfully!')</script>";
+    echo '<script> alert("Registered Successfully!")</script>';
   }
   else
   {
-    echo "<script>alert('Failed!')</script>";
+    echo '<script>alert("Failed!")</script>';
   }
 }
 

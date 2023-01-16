@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     require_once "email_connect.php";
     extract($_POST);
     if(isset($submit))
@@ -13,7 +13,7 @@
             echo '<script> alert("RETRY!")</script>';
         }
     }
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
