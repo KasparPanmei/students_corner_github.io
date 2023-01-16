@@ -1,4 +1,4 @@
-alert("Hello? Welcome to Our Site")
+// alert("Hello? Welcome to Our Site")
 
 let loadMoreBtn = document.querySelector("#load-more");
 let currentItem = 2;

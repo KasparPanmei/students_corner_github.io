@@ -37,7 +37,7 @@ if(isset($submit))
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <a class="navbar-brand" href="./index.html">
+                  <a class="navbar-brand" href="./index.php">
                     <img src="./navbar-2-logo.png" alt="" style="width: 200px;">
                   </a>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -46,7 +46,7 @@ if(isset($submit))
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="./index.php">Home</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#about-us">About Us</a>
