@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+require_once "email_connect.php";
+extract($_POST);
+if(isset($_POST['login']))
+{
+  $regno = mysqli_real_escape_string($con, $_POST['regno']);
+  $password = mysqli_real_escape_string($con, $_POST['password']);
+  $select = "SELECT *FROM student_details WHERE regno = '$regno' AND password = '$password'";
+  $result = mysqli_query($con, $select);
+  if(mysqli_num_rows($result)>0)
+  {
+    $row =  mysqli_fetch_assoc($result);
+    $_SESSION['user_id']= $row['id'];
+    header('location:landing_page.php');
+  }
+  else
+  {
+    echo  '<script> alert("Incorrect Regno or Password")</script>';
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,7 +197,17 @@
           animation: btn-anim4 1s linear infinite;
           animation-delay: .75s
         }
-
+        .btn
+        {
+          border: 0.1px solid rgb(15, 24, 36);
+          background-color: rgb(96, 123, 158);
+          padding: 10px 20px;
+          font-size: 15px;
+          color: white;
+          border-radius: 8px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
         @keyframes btn-anim4 {
           0% {
             bottom: -100%;
@@ -228,19 +262,15 @@
         <form action="" method="post">
             <div class="user-box">
                 <!-- <label >Username</label> -->
-                <input type="text" name="" id="" placeholder="Your Reg.no.">
+                <input type="text" name="regno" id="" placeholder="Your Reg.no.">
             </div>
             <div class="user-box">
                 <!-- <label >Password</label> -->
-                <input type="password" placeholder="Enter password">
+                <input type="password" name="password" placeholder="Enter password">
             </div>
-            <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Login
-            </a>
+            <button type="submit" name="login" class="btn btn-primary">
+              Login
+            </button>
         </form>
     </div>
 </body>

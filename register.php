@@ -4,7 +4,7 @@ require_once "email_connect.php";
 extract($_POST);
 if(isset($submit))
 {
-  $sql = "INSERT INTO `student_details`(name, branch, regno, password, email, phone, sentence, links) VALUES ('$name', '$branch', '$regno', '$password', '$email', '$phone', '$sentence', '$links')";
+  $sql = "INSERT INTO `student_details`(name, branch, regno, password, email, phone, sentence) VALUES ('$name', '$branch', '$regno', '$password', '$email', '$phone', '$sentence')";
   if($con->query($sql)==TRUE)
   {
     echo '<script> alert("Registered Successfully!")</script>';
@@ -101,10 +101,6 @@ if(isset($submit))
                         <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Sentence Movitation</label>
                           <input type="text" class="form-control" id="exampleInputPassword1" name="sentence" required>
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Social Media Links</label>
-                          <input type="text" class="form-control" id="exampleInputPassword1" name="links" required>
                         </div>
                         <div class="submit">
                             <button class="btn btn-primary" name="submit">Submit</button>

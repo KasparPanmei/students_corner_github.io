@@ -1,0 +1,154 @@
+*
+{
+    margin: 0;
+    padding: 0%;
+}
+body
+{
+    background: linear-gradient(to right,rgb(156, 185, 156),rgb(119, 119, 219));
+    height: 00vh;
+}
+header
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+}
+header span
+{
+    font-size: 30px;
+    color: white;
+}
+header h2
+{
+    font-size: 40px;
+    text-transform: uppercase;
+    animation: scale 1s infinite ease;
+    color: white;
+}
+@keyframes scale 
+{
+    0%
+    {
+        transform: scale(1.4);
+    }   
+    50%
+    {
+        transform: scale(1.3);
+    }
+    100%
+    {
+        transform: scale(1.4);
+    }
+}
+.borders
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background
+{
+    margin: 50px 0 0 0;
+    background-color: rgb(50, 55, 59);
+    width: 40%;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px;
+}
+.for-the-forms
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 0 0;
+    font-size: 20px;
+    color: white;
+}
+.for-the-forms input
+{
+    background-color: aliceblue;
+    border: 0ch solid white;
+    text-align: center;
+}
+.button
+{
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button a
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.button a:hover{
+    color: white;
+}
+@media (max-width:1000.98px) 
+{
+    .for-the-forms
+    {
+        font-size: 15px;
+    }   
+}
+@media (max-width:785.98px) 
+{
+    .background
+    {
+        width: 70%;
+    }
+    .for-the-forms
+    {
+        font-size: 15px;
+    }
+}
+
+@media (max-width:539.98px) 
+{
+    .for-the-forms
+    {
+        font-size: 15px;
+    }    
+}
+@media (max-width:451.98px) 
+{
+    .background
+    {
+        width: 70%;
+    }
+    .for-the-forms
+    {
+        font-size: 12px;
+    }    
+}
+@media (max-width:366.98px) 
+{
+    .background
+    {
+        width: 80%;
+    } 
+    .for-the-forms
+    {
+        font-size: 10px;
+    }    
+}
+@media (max-width:290.98px) 
+{
+    header h2
+    {
+        font-size: 25px;
+    }
+    header span
+    {
+        font-size: 20px;
+    }
+    .background
+    {
+        padding: 20px;
+    }
+}
