@@ -4,22 +4,22 @@ session_start();
 require_once "email_connect.php";
 extract($_POST);
 if(isset($_POST['login']))
-{
-  $regno = mysqli_real_escape_string($con, $_POST['regno']);
-  $password = mysqli_real_escape_string($con, $_POST['password']);
-  $select = "SELECT *FROM student_details WHERE regno = '$regno' AND password = '$password'";
-  $result = mysqli_query($con, $select);
-  if(mysqli_num_rows($result)>0)
   {
-    $row =  mysqli_fetch_assoc($result);
-    $_SESSION['user_id']= $row['id'];
-    header('location:landing_page.php');
+    // $regno = mysqli_real_escape_string($con, $_POST['regno']);
+    // $password = mysqli_real_escape_string($con, $_POST['password']);
+    $select = "SELECT *FROM student_details WHERE regno = '$regno' AND password = '$password'";
+    $result = mysqli_query($con, $select);
+    if(mysqli_num_rows($result)>0)
+    {
+      $row =  mysqli_fetch_assoc($result);
+      $_SESSION['user_id']= $row['id'];
+      header('location:landing_page.php');
+    }
+    else
+    {
+      echo  '<script> alert("Incorrect Regno or Password")</script>';
+    }
   }
-  else
-  {
-    echo  '<script> alert("Incorrect Regno or Password")</script>';
-  }
-}
 ?>
 
 <!DOCTYPE html>

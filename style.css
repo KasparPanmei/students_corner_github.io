@@ -442,6 +442,30 @@ article .container .heading h4
 {
     transform: scale(1.1);
 } */
+
+/* .footer-cols input
+{
+    animation: shake 0.14s 3;
+}
+@keyframes shake 
+{
+    0%,100%
+    {
+        translate: 0;
+    }    
+    25%
+    {
+        translate: 8px 0;
+    }
+    75%
+    {
+        translate: -8px 0;
+    }
+}
+.footer-cols input:valid{
+    border-color: #45feaf;
+    animation: none;
+} */
 .new-cols .footer-cols .btn
 {
     border: 1px solid rgb(97, 137, 212);
