@@ -1,9 +1,37 @@
 <?php
   require_once "email_connect.php";
+  error_reporting(0);
+  $msg = "";
   extract($_POST);
   if(isset($submit))
   {
+    // Get image from Post Data
+    $image  = $_FILES['file'];
+    // Image Name
+    $image_name=$image['name'];
+    // Temporary file path
+    $image_tmp_name=$image['tmp_name']; 
+    // Folder path where Image is Saved 
+    $destination="image/".$image_name; 
+    //this is a function that are used to store the file in the destination path.
+    move_uploaded_file($image_tmp_name , $destination); 
+
+    // signature
+    // Get image from Post Data
+    $sign_image  = $_FILES['sign'];
+    // Image Name
+    $sign_image_name= $sign_image['name'];
+    // Temporary file path
+    $sign_image_tmp_name=$sign_image['tmp_name']; 
+    // Folder path where Image is Saved 
+    $destination="sign_folder/".$sign_image_name; 
+    //this is a function that are used to store the file in the destination path.
+    move_uploaded_file($sign_image_tmp_name , $destination); 
+
+
+    // SQL queries
     $sql = "INSERT INTO `student_details`(file, name, date, fname, mname, sign, mtu_email, regno, batch, aadhar, category, phone,email,course,branch,sem,password) VALUES ('$file','$name','$date','$fname','$mname','$sign', '$mtu_email','$regno','$batch','$aadhar','$category', '$phone', '$email','$course','$branch','$sem','$password')";
+    
     if($con->query($sql)==TRUE)
     {
       echo '<script> alert("Registered Successfully!")</script>';
@@ -94,12 +122,12 @@ header .center .flex
         <h1>Registration</h1>
     </div>
     <div class="center">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="flex">
                 <div class="f-col-flex">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Passport</label>
-                        <input type="file" class="form-control" id="" aria-describedby="" name="file" required>
+                        <input type="file" class="form-control" id="" aria-describedby="" name="file" accept="image/*" required>
                       </div>
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label">Name</label>

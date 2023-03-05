@@ -48,6 +48,7 @@ section .php-connection .flex .image
 {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 section .php-connection .flex .image img
 {
@@ -55,6 +56,7 @@ section .php-connection .flex .image img
     height: 200px;
     border-radius: 5px;
     margin: 10px 0 0 10px;
+    object-fit: contain;
 }
 section .php-connection .flex .image #signature
 {
@@ -269,7 +271,8 @@ section .offcanvas
         </div>
     </header>
     <section>
-        <div class="php-connection">
+        <form action=""method="post" enctype="multipart/form-data">
+            <div class="php-connection">
             <?php
             $select = mysqli_query($con, "SELECT *FROM `student_details` WHERE id = '$user_id'") or die('Query Failed');
             if(mysqli_num_rows($select) > 0)
@@ -279,10 +282,9 @@ section .offcanvas
             ?>
             <div class="flex">
                 <div class="image">
-                    <img src="<?php
-                    echo $fetch['file'];
-                    ?>" alt="" name="file">
-                    <img src="" alt="" id="signature" name="sign">
+                    <img src="./image/KasparPanmei_CSE.jpg" alt="passport" id="passport" name="file" style="color:white;">
+                    
+                    <img src="./sign_folder/Signature.jpg" alt="signature" id="signature" name="sign" style="color:white;">
                     <div class="scholastic_details">
                         <div class="new-frnt-end">
                             <h4>MTU-Email</h4>
@@ -372,22 +374,7 @@ section .offcanvas
                         
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <?php
-                            include('email_connect.php');
-                            extract($_POST);
-                            if(isset($submit))
-                            {
-                                $sql = "INSERT INTO `documents`(doc_file) VALUES ('$doc_file')";
-                                if($con->query($sql)==TRUE)
-                                {
-                                    echo '<script>alert("Uploaded Successfully!")</script>';
-                                }
-                                else
-                                {
-                                    echo '<script>alert("Uploaded Unsuccessfully!")</script>';
-                                }
-                            }
-                            ?>
+                            
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -429,18 +416,47 @@ section .offcanvas
                                     <div class="offcanvas-body">
                                       <div>
                                         Upload your important documents here
+                                        <br>
                                       </div>
                                       <!-- input file -->
-                                      <form action=""method="post">
+                                      <form action=""method="post" enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <form action="" method="post">
-                                            <label for="formFileMultiple" class="form-label">Multiple files input example</label>
-                                        8     <input class="form-control" type="file" id="formFileMultiple" multiple name="doc_file" required>
-                                          </div>
+                                        <?php
+                                        include('email_connect.php');
+                                        error_reporting(0);
+                                        $msg = "";
+                                        extract($_POST);
+
+                                        // Get image from Post Data
+                                        $documents = $_FILES['docfile'];
+                                        // Image Name
+                                        $documents_name=$documents['name'];
+                                        // Temporary file path
+                                        $documents_tmp_name = $documents['tmp_name']; 
+                                        // Folder path where Image is Saved 
+                                        $destination="document/".$documents_name; 
+                                        //this is a function that are used to store the file in the destination path.
+                                        move_uploaded_file($documents_tmp_name , $destination); 
+                                        if(isset($submit))
+                                        {
+                                            $sql = "INSERT INTO `documents` (doc_file)VALUES('$docfile')";
+                                            if($con->query($sql)==TRUE)
+                                            {
+                                                echo '<script>alert("Uploaded Successfully!")</script>';
+                                            }
+                                            else
+                                            {
+                                                echo '<script>alert("Uploaded Unsuccessfully!")</script>';
+                                            }
+                                        }
+                                        ?>
+                                            <input class="form-control" type="file" id="formFileMultiple" multiple name="docfile" required>
+                                        </div>
                                           <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                                            </form>
                                           <!-- end of input file -->
-                                          <div class="fetch-from-database"></div>
+                                          <div class="fetch-from-database">
+
+                                          </div>
                                         </div>
                                       </form>
                                   </div>
@@ -455,6 +471,7 @@ section .offcanvas
                 </div>
             </div>
         </div>
+        </form>
     </section>
     <footer>
         <div  id="logout">
